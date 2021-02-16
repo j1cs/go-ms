@@ -3,3 +3,7 @@ server:
   debug: true
   read_timeout_seconds: 10
   write_timeout_seconds: 5
+test: test
+database:
+  log_queries: true
+  timeout_seconds: 5

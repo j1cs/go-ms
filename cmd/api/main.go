@@ -1,17 +1,21 @@
 package main
 
 import (
-	"flag"
+	"path/filepath"
+	"runtime"
 
 	"github.com/glats/go-ms/pkg/api"
 	"github.com/glats/go-ms/pkg/config"
 )
 
-func main() {
-	cfgPath := flag.String("p", "./cmd/api/config.yaml", "Path to config file")
-	flag.Parse()
+//TODO check my other projects on the asus.
+var (
+	_, b, _, _ = runtime.Caller(0)
+	basepath   = filepath.Dir(b)
+)
 
-	cfg, err := config.Load(*cfgPath)
+func main() {
+	cfg, err := config.Load(basepath, "config", "yaml")
 	checkErr(err)
 
 	checkErr(api.Start(cfg))
