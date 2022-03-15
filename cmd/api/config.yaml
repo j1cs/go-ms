@@ -3,7 +3,10 @@ server:
   debug: true
   read_timeout_seconds: 10
   write_timeout_seconds: 5
-test: test
+
 database:
+  psn: postgres://postgres:postgres123@localhost:5432/postgres?sslmode=disable
   log_queries: true
   timeout_seconds: 5
+
+  # JWT_SECRET=xMeM5xtK55WyJeQlNSbinW8zzusghtQuGTitUZnHqtvNz6FSBgpTNq9XjRrwgq63;ENVIRONMENT_NAME=dev

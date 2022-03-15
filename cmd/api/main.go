@@ -1,6 +1,7 @@
 package main
 
 import (
+	"path"
 	"path/filepath"
 	"runtime"
 
@@ -8,10 +9,9 @@ import (
 	"github.com/glats/go-ms/pkg/config"
 )
 
-//TODO check my other projects on the asus.
 var (
 	_, b, _, _ = runtime.Caller(0)
-	basepath   = filepath.Dir(b)
+	basepath   = filepath.FromSlash(path.Dir(b))
 )
 
 func main() {
